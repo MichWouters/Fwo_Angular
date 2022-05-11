@@ -1,4 +1,10 @@
 <h1>servers works!</h1>
 
+<button [disabled]="!allowNewServer" (click)="onCreateServer()">
+    Add Server
+</button>
+
+<p>{{ serverCreationStatus }}</p>
+
 <app-server></app-server>
 <app-server></app-server>
