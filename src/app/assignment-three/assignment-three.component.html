@@ -1,3 +1,5 @@
+<h2>Assignment 2</h2>
+
 <ol>
     <li>Add A button which says 'Display Details'</li>
     <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
@@ -8,7 +10,18 @@
         (ngClass)</li>
 </ol>
 
+<hr />
+<button (click)="onToggleDetails()">Display Details</button>
+<p *ngIf="showSecret">Secret Password = tuna</p>
 
+<div *ngFor="let log of logs; let i=index" 
+    [ngStyle]="{backgroundColor: i >= 5?  'blue' : 'transparant'}"
+    [ngClass]="{'white-text': i >= 5}">
+    {{ log }}
+</div>
+
+
+<hr />
 <h2>Assignment 2</h2>
 <p>Make a new component with the following functionality:
     Make a class "Holiday", with properties:</p>
@@ -20,13 +33,29 @@
 
 <p>
     Part 1: Make an array of 5 holiday objects with random temperatures between 0 and 25 , and show the items in the
-    HTML
-    template. (Make use of the *ngFor directive) (column 1 = city name, column 2 = temperature)
+    HTML template. (Make use of the *ngFor directive) (column 1 = city name, column 2 = temperature)
 </p>
 
 <p>
     Part 2: Change every 5 seconds the temperature of the cities, and extend the table with an extra column: if the
     temperature is between 0 and 5, you display in the new column "very cold", if the temperature is between 5 and 12,
-    you
-    display "cloudy", and if the temperature arises 17, you display: very nice weather!
+    you display "cloudy", and if the temperature arises 17, you display: very nice weather!
 </p>
+
+<table border="1">
+    <tr>
+        <th>City</th>
+        <th>Temperature</th>
+    </tr>
+    <tr *ngFor="let holiday of holidays">
+        <td> {{ holiday.city | uppercase}} </td>
+        <td> {{ holiday.temperature }} </td>
+        <td *ngIf="holiday.temperature > 0">
+            <div [ngSwitch]="true">
+                <div *ngSwitchCase="holiday.temperature >=0 && holiday.temperature <= 5 ">Very cold</div>
+                <div *ngSwitchCase="holiday.temperature >=6 && holiday.temperature <= 12 ">Cloudy</div>
+                <div *ngSwitchCase="holiday.temperature >=17">Very nice weather!</div>
+            </div>
+        </td>
+    </tr>
+</table>
