@@ -7,7 +7,36 @@
     Add Server
 </button>
 
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated else noServer">Server was created. Servername is {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
 
-<app-server></app-server>
-<app-server></app-server>
+
+<app-server *ngFor="let server of servers">
+</app-server>
+
+<div *ngFor="let serverModel of serverModels">
+    <p>Id: {{serverModel.id}}</p>
+    <p>Name: {{serverModel.name}}</p>
+    <p>Status: {{serverModel.status | uppercase }}</p>
+</div>
+
+<label>Enter a color:</label>
+<input type="text" [(ngModel)]="color" />
+
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">You picked a red color</p>
+    <p *ngSwitchCase="'blue'">You picked a blue color</p>
+    <p *ngSwitchCase="'green'">You picked a green color</p>
+    <p *ngSwitchDefault>Try again</p>
+</div>
+
+<!-- <p>{{ serverName | uppercase }} </p>
+<p>{{ serverName | lowercase }} </p>
+<p>{{ serverName | titlecase }} </p>
+<p>{{ serverName | slice:0:5 | uppercase }} </p>
+<p>{{ '1.3548646415346848946' | currency: 'EUR' }} </p>
+
+<p>{{ '05/07/2022' | date: 'longDate' | uppercase }} </p> -->
