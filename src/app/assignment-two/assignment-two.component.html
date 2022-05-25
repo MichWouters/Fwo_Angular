@@ -6,3 +6,11 @@
     <li>Add a button which may only be clicked if the userinput is NOT an empty string</li>
     <li>Upon clicking the button, a message is shown: Hello username and the username is reset to an empty string</li>
 </ol>
+
+<hr />
+<label>UserName:</label>
+<input type="text" [(ngModel)]="userName" />
+<p>Hello {{ userName }}</p>
+<button type="button" [disabled]="isUserNameEmpty()" (click)="resetUser()">
+    Reset User
+</button>
