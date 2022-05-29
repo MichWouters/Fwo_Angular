@@ -1,4 +1,5 @@
-<h1>servers works!</h1>
+<h1>Servers</h1>
+<hr />
 
 <input type="text" [(ngModel)]="serverName" />
 <p>{{ serverName }} </p>
@@ -25,16 +26,6 @@
     <p>Name: {{serverModel.name}}</p>
     <p>Status: {{serverModel.status | uppercase }}</p>
 </div> -->
-
-<label>Enter a color:</label>
-<input type="text" [(ngModel)]="color" />
-
-<div [ngSwitch]="color">
-    <p *ngSwitchCase="'red'">You picked a red color</p>
-    <p *ngSwitchCase="'blue'">You picked a blue color</p>
-    <p *ngSwitchCase="'green'">You picked a green color</p>
-    <p *ngSwitchDefault>Try again</p>
-</div>
 
 <!-- <p>{{ serverName | uppercase }} </p>
 <p>{{ serverName | lowercase }} </p>

@@ -10,6 +10,7 @@ import { SuccessAlertComponent } from './assignments/assignment-one/success-aler
 import { WarningAlertComponent } from './assignments/assignment-one/warning-alert/warning-alert.component';
 import { AssignmentTwoComponent } from './assignments/assignment-two/assignment-two.component';
 import { AssignmentThreeComponent } from './assignments/assignment-three/assignment-three.component';
+import { ColorsComponent } from './colors/colors.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AssignmentThreeComponent } from './assignments/assignment-three/assignm
     WarningAlertComponent,
     AssignmentTwoComponent,
     AssignmentThreeComponent,
+    ColorsComponent,
   ],
   imports: [
     BrowserModule,
