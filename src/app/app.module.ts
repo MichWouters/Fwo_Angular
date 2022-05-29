@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
@@ -11,6 +12,11 @@ import { WarningAlertComponent } from './assignments/assignment-one/warning-aler
 import { AssignmentTwoComponent } from './assignments/assignment-two/assignment-two.component';
 import { AssignmentThreeComponent } from './assignments/assignment-three/assignment-three.component';
 import { ColorsComponent } from './colors/colors.component';
+import { DirectiveExampleComponent } from './directives/directive-example/directive-example.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { BasicHighlightDirective } from './directives/basic-highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -23,10 +29,14 @@ import { ColorsComponent } from './colors/colors.component';
     AssignmentTwoComponent,
     AssignmentThreeComponent,
     ColorsComponent,
+    DirectiveExampleComponent,
+    BasicHighlightDirective,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
