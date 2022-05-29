@@ -4,28 +4,22 @@
 <input type="text" [(ngModel)]="serverName" />
 <p>{{ serverName }} </p>
 
-<button [disabled]="!allowNewServer" (click)="onCreateServer()">
-    Add Server
-</button>
+<button [disabled]="!allowNewServer" (click)="onCreateServer()"> Add Server </button>
 
-<!-- <p>{{ serverCreationStatus }}</p> -->
 <p *ngIf="serverCreated else noServer">Server was created. Servername is {{ serverName }}</p>
 <ng-template #noServer>
     <p>No server was created</p>
 </ng-template>
 
 
-<app-server 
-    *ngFor="let server of serverModels" 
-    [serverId]="server.id"
-    [serverName]="server.name">
+<app-server *ngFor="let server of serverModels">
 </app-server>
 
-<!-- <div *ngFor="let serverModel of serverModels">
+<div *ngFor="let serverModel of serverModels">
     <p>Id: {{serverModel.id}}</p>
     <p>Name: {{serverModel.name}}</p>
     <p>Status: {{serverModel.status | uppercase }}</p>
-</div> -->
+</div>
 
 <!-- <p>{{ serverName | uppercase }} </p>
 <p>{{ serverName | lowercase }} </p>

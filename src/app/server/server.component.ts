@@ -6,8 +6,8 @@ import { Component, Input } from "@angular/core";
     styleUrls: ['./server.component.css'],
 })
 export class ServerComponent {
-    @Input() serverId: number = 10;
-    @Input() serverName: string = 'server';
+    serverId: number = 10;
+    serverName: string = 'server';
     serverStatus: string = 'Offline';
 
     constructor() {
