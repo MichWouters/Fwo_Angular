@@ -12,7 +12,6 @@ export class ServersComponent implements OnInit {
   serverName = 'Testserver';
   serverCreated = false;
 
-  servers = ['TestServer', 'TestServer2', 'TestServer3'];
   serverModels: ServerModel[] = [
     new ServerModel(1, 'Main Server', 'Online'),
     new ServerModel(2, 'Backup Server', 'Online'),
