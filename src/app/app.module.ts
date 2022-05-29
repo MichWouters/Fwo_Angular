@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { AssignmentOneComponent } from './assignments/assignment-one/assignment-one.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { SuccessAlertComponent } from './assignments/assignment-one/success-alert/success-alert.component';
+import { WarningAlertComponent } from './assignments/assignment-one/warning-alert/warning-alert.component';
 import { AssignmentTwoComponent } from './assignments/assignment-two/assignment-two.component';
 import { AssignmentThreeComponent } from './assignments/assignment-three/assignment-three.component';
 
