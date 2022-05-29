@@ -12,14 +12,11 @@ export class ServersComponent implements OnInit {
   serverName = 'Testserver';
   serverCreated = false;
 
-  servers = ['TestServer', 'TestServer2', 'TestServer3'];
   serverModels: ServerModel[] = [
     new ServerModel(1, 'Main Server', 'Online'),
     new ServerModel(2, 'Backup Server', 'Online'),
     new ServerModel(3, 'Offshore Server', 'Offline'),
   ];
-
-  color = '';
 
   constructor() {
     setTimeout(() => {
@@ -33,7 +30,7 @@ export class ServersComponent implements OnInit {
   onCreateServer() {
     this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
-    this.servers.push('');
+    this.serverModels.push(new ServerModel(this.serverModels.length + 1, this.serverName, 'Online'));
   }
 
   onUpdateServerName(event: Event) {

@@ -1,0 +1,12 @@
+<h1>Colors</h1>
+<hr />
+
+<label>Enter a color: </label>
+<input type="text" [(ngModel)]="color" />
+
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">You picked a red color</p>
+    <p *ngSwitchCase="'blue'">You picked a blue color</p>
+    <p *ngSwitchCase="'green'">You picked a green color</p>
+    <p *ngSwitchDefault>Try again</p>
+</div>

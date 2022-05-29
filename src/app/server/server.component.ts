@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'app-server',
@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
 })
 export class ServerComponent {
     serverId: number = 10;
+    serverName: string = 'server';
     serverStatus: string = 'Offline';
 
     constructor() {
@@ -18,13 +19,6 @@ export class ServerComponent {
     }
 
     getIsServerOnline(): string {
-        // if (this.serverStatus === 'Offline') {
-        //     return false;
-        // }
-        // else {
-        //     return true;
-        // }
-
         return this.serverStatus === 'Offline' ? 'red' : 'green';
     }
 }
