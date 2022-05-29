@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import { NewAccountComponent } from './services/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UnlessDirective } from './directives/unless.directive';
     DirectiveExampleComponent,
     BasicHighlightDirective,
     UnlessDirective,
+    NewAccountComponent,
   ],
   imports: [
     BrowserModule,
