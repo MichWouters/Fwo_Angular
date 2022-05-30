@@ -11,6 +11,12 @@ import { WarningAlertComponent } from './assignments/assignment-one/warning-aler
 import { AssignmentTwoComponent } from './assignments/assignment-two/assignment-two.component';
 import { AssignmentThreeComponent } from './assignments/assignment-three/assignment-three.component';
 import { ColorsComponent } from './colors/colors.component';
+import { DirectiveExampleComponent } from './directives/directive-example/directive-example.component';
+
+// Directives
+import { BasicHighlightDirective } from './directives/basic-highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { AssignmentFourComponent } from './assignments/assignment-four/assignment-four.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,10 @@ import { ColorsComponent } from './colors/colors.component';
     AssignmentTwoComponent,
     AssignmentThreeComponent,
     ColorsComponent,
+    DirectiveExampleComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    AssignmentFourComponent,
   ],
   imports: [
     BrowserModule,
