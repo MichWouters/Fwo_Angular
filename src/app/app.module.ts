@@ -17,6 +17,10 @@ import { DirectiveExampleComponent } from './directives/directive-example/direct
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { AssignmentFourComponent } from './assignments/assignment-four/assignment-four.component';
+import { AccountComponent } from './accounts/account/account.component';
+import { NewAccountComponent } from './accounts/new-account/new-account.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { LoggingService } from './services/logging.service';
 
 @NgModule({
   declarations: [
@@ -33,12 +37,15 @@ import { AssignmentFourComponent } from './assignments/assignment-four/assignmen
     BasicHighlightDirective,
     BetterHighlightDirective,
     AssignmentFourComponent,
+    AccountComponent,
+    NewAccountComponent,
+    AccountsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
