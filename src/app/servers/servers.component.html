@@ -12,14 +12,17 @@
 </ng-template>
 
 
-<app-server *ngFor="let server of serverModels">
+<app-server 
+    *ngFor="let server of serverModels"
+    [serverId]="server.id"
+    [serverName]="server.name">
 </app-server>
 
-<div *ngFor="let serverModel of serverModels">
+<!-- <div *ngFor="let serverModel of serverModels">
     <p>Id: {{serverModel.id}}</p>
     <p>Name: {{serverModel.name}}</p>
     <p>Status: {{serverModel.status | uppercase }}</p>
-</div>
+</div> -->
 
 <!-- <p>{{ serverName | uppercase }} </p>
 <p>{{ serverName | lowercase }} </p>
