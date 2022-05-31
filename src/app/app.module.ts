@@ -24,6 +24,11 @@ import { LoggingService } from './services/logging.service';
 import { AssignmentFiveComponent } from './assignments/assignment-five/assignment-five.component';
 import { ActiveUsersComponent } from './assignments/assignment-five/active-users/active-users.component';
 import { InactiveUsersComponent } from './assignments/assignment-five/inactive-users/inactive-users.component';
+import { HomeComponent } from './routing/home/home.component';
+import { UsersComponent } from './routing/users/users.component';
+import { EditServerComponent } from './routing/servers/edit-server/edit-server.component';
+import { UserComponent } from './routing/users/user/user.component';
+import { RoutingComponent } from './routing/routing.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +51,11 @@ import { InactiveUsersComponent } from './assignments/assignment-five/inactive-u
     AssignmentFiveComponent,
     ActiveUsersComponent,
     InactiveUsersComponent,
+    HomeComponent,
+    UsersComponent,
+    EditServerComponent,
+    UserComponent,
+    RoutingComponent,
   ],
   imports: [
     BrowserModule,
