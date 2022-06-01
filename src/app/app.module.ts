@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -26,6 +27,19 @@ import { ActiveUsersComponent } from './assignments/assignment-five/active-users
 import { InactiveUsersComponent } from './assignments/assignment-five/inactive-users/inactive-users.component';
 import { CounterService } from './services/counter.service';
 import { AssignmentSixComponent } from './assignments/assignment-six/assignment-six.component';
+import { AssignmentSixModule } from './assignments/assignment-six/assignment-six.module';
+import { FirstComponent } from './assignments/assignment-six/first/first.component';
+import { PageNotFoundComponent } from './assignments/assignment-six/page-not-found/page-not-found.component';
+import { SecondComponent } from './assignments/assignment-six/second/second.component';
+import { ThirdComponent } from './assignments/assignment-six/third/third.component';
+
+const routes: Routes = [
+  { path: 'first-page', component: FirstComponent },
+  { path: 'second-page', component: SecondComponent },
+  { path: 'third-page', component: ThirdComponent },
+  { path: '', redirectTo:'/first-page', pathMatch:'full' },
+  { path: '**', component: PageNotFoundComponent },
+];
 
 @NgModule({
   declarations: [
@@ -52,7 +66,9 @@ import { AssignmentSixComponent } from './assignments/assignment-six/assignment-
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AssignmentSixModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [LoggingService, CounterService],
   bootstrap: [AppComponent]
