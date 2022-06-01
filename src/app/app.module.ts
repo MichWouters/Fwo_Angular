@@ -24,6 +24,7 @@ import { LoggingService } from './services/logging.service';
 import { AssignmentFiveComponent } from './assignments/assignment-five/assignment-five.component';
 import { ActiveUsersComponent } from './assignments/assignment-five/active-users/active-users.component';
 import { InactiveUsersComponent } from './assignments/assignment-five/inactive-users/inactive-users.component';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { InactiveUsersComponent } from './assignments/assignment-five/inactive-u
     BrowserModule,
     FormsModule
   ],
-  providers: [LoggingService],
+  providers: [LoggingService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
