@@ -1,1 +1,44 @@
-<p>template-form works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div id="user-data">
+                    <div class="form-group">
+                        <label for="userName">Username</label>
+                        <input type="text" class="form-control" [ngModel]="defaultName" name="userName" required
+                            #name="ngModel">
+                    </div>
+                    <span class="help-block" *ngIf="!name.valid && name.touched">
+                        Please enter a name
+                    </span>
+                </div>
+                <button class="btn btn-primary" type="button">
+                    Suggest a username
+                </button>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" ngModel name="email" required email #email="ngModel">
+                    <span class="help-block" *ngIf="!email.valid && email.touched">
+                        Please enter a valid email address
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="secret">Secret questions</label>
+                    <select class="form-control" name="secret" [ngModel]="defaultQuestion">
+                        <option value="pet">Your first pet?</option>
+                        <option value="teacher">Your first teacher?</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="questionAnswer" rows="3" cols="20" [ngModel]="answer"></textarea>
+                </div>
+                <p>Your reply: {{ answer }} </p>
+
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
