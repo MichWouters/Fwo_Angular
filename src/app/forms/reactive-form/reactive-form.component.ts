@@ -9,7 +9,7 @@ import { Form, FormArray, FormControl, FormGroup, ReactiveFormsModule, Validator
 export class ReactiveFormComponent implements OnInit {
   genders = ['male', 'female', 'other'];
   signupForm!: FormGroup;
-  forbiddenUserNames = ['Pepe', 'Dick'];
+  forbiddenUserNames = ['male', 'female', 'other'];
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class ReactiveFormComponent implements OnInit {
     this.signupForm = new FormGroup({
       'username': new FormControl(null, [Validators.required, this.isNameForbidden]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
-      'gender': new FormControl('female'),
+      'gender': new FormControl('male'),
       'hobbies': new FormArray([]),
     });
   }
@@ -36,9 +36,11 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   isNameForbidden(control: FormControl): { [s: string]: boolean } {
-    if (this.forbiddenUserNames.indexOf(control.value) !== -1) {
-      return { 'nameIsForbidden': true };
-    }
+    // if (this.forbiddenUserNames !== undefined) {
+    //   if (this.forbiddenUserNames.indexOf(control.value) !== -1) {
+    //     return { 'nameIsForbidden': true };
+    //   }
+    // }
 
     return { 'nameIsForbidden': false };
   }
