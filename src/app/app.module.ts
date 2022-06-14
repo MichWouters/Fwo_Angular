@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -13,7 +13,7 @@ import { AssignmentThreeComponent } from './assignments/assignment-three/assignm
 import { ColorsComponent } from './colors/colors.component';
 import { DirectiveExampleComponent } from './directives/directive-example/directive-example.component';
 
-// Directives
+
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { AssignmentFourComponent } from './assignments/assignment-four/assignment-four.component';
@@ -28,6 +28,8 @@ import { CounterService } from './services/counter.service';
 import { AssignmentSixComponent } from './assignments/assignment-six/assignment-six.component';
 import { AssignmentSixModule } from './assignments/assignment-six/assignment-six.module';
 import { AppRoutingModule } from './app-routing-module';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { TemplateFormComponent } from './forms/template-form/template-form.component';
 
 @NgModule({
   declarations: [
@@ -51,10 +53,13 @@ import { AppRoutingModule } from './app-routing-module';
     ActiveUsersComponent,
     InactiveUsersComponent,
     AssignmentSixComponent,
+    ReactiveFormComponent,
+    TemplateFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AssignmentSixModule,
     AppRoutingModule,
   ],
