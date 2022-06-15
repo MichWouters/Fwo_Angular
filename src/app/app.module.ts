@@ -28,6 +28,8 @@ import { CounterService } from './services/counter.service';
 import { AssignmentSixComponent } from './assignments/assignment-six/assignment-six.component';
 import { AssignmentSixModule } from './assignments/assignment-six/assignment-six.module';
 import { AppRoutingModule } from './app-routing-module';
+import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { AppRoutingModule } from './app-routing-module';
     ActiveUsersComponent,
     InactiveUsersComponent,
     AssignmentSixComponent,
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
