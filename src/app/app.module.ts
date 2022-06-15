@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -29,7 +30,7 @@ import { AssignmentSixComponent } from './assignments/assignment-six/assignment-
 import { AssignmentSixModule } from './assignments/assignment-six/assignment-six.module';
 import { AppRoutingModule } from './app-routing-module';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
-import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { AssignmentSevenComponent } from './assignments/assignment-seven/assignment-seven.component';
 
 @NgModule({
   declarations: [
@@ -55,10 +56,12 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
     AssignmentSixComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
+    AssignmentSevenComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AssignmentSixModule,
     AppRoutingModule,
   ],
