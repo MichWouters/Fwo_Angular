@@ -1,0 +1,7 @@
+.form-control {
+    margin-bottom: 1em;
+}
+
+input.ng-dirty.ng-invalid, select.ng-dirty.ng-invalid {
+    border: 1px solid red;
+}

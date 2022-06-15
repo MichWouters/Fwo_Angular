@@ -103,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "fwo_lesson1"
+  "defaultProject": "fwo_lesson1",
+  "cli": {
+    "analytics": false
+  }
 }
