@@ -20,6 +20,6 @@ export class AssignmentSevenComponent implements OnInit {
   }
 
   onSaveProject() {
-    console.log(this.projectForm.value);
+    console.log(this.projectForm);
   }
 }
