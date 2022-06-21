@@ -34,6 +34,8 @@ import { AssignmentSevenComponent } from './assignments/assignment-seven/assignm
 import { HomeComponent } from './observables/home/home.component';
 import { UserComponent } from './observables/user/user.component';
 import { ObservableComponent } from './observables/observable/observable.component';
+import { PostsComponent } from './httprequests/posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { ObservableComponent } from './observables/observable/observable.compone
     HomeComponent,
     UserComponent,
     ObservableComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,8 @@ import { ObservableComponent } from './observables/observable/observable.compone
     ReactiveFormsModule,
     AssignmentSixModule,
     AppRoutingModule,
+    HttpClientModule,
+
   ],
   providers: [LoggingService, CounterService],
   bootstrap: [AppComponent]
