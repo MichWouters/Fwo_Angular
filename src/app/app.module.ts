@@ -31,6 +31,9 @@ import { AssignmentSixModule } from './assignments/assignment-six/assignment-six
 import { AppRoutingModule } from './app-routing-module';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { AssignmentSevenComponent } from './assignments/assignment-seven/assignment-seven.component';
+import { HomeComponent } from './observables/home/home.component';
+import { UserComponent } from './observables/user/user.component';
+import { ObservableComponent } from './observables/observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { AssignmentSevenComponent } from './assignments/assignment-seven/assignm
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
     AssignmentSevenComponent,
+    HomeComponent,
+    UserComponent,
+    ObservableComponent,
   ],
   imports: [
     BrowserModule,
