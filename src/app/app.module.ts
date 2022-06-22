@@ -34,6 +34,7 @@ import { AssignmentSevenComponent } from './assignments/assignment-seven/assignm
 import { HomeComponent } from './observables/home/home.component';
 import { ObservableComponent } from './observables/observable/observable.component';
 import { UserComponent } from './observables/user/user.component';
+import { PostsComponent } from './httpRequests/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { UserComponent } from './observables/user/user.component';
     HomeComponent,
     ObservableComponent,
     UserComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
