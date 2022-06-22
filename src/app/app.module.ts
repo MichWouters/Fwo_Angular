@@ -35,6 +35,7 @@ import { HomeComponent } from './observables/home/home.component';
 import { ObservableComponent } from './observables/observable/observable.component';
 import { UserComponent } from './observables/user/user.component';
 import { PostsComponent } from './httpRequests/posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { PostsComponent } from './httpRequests/posts/posts.component';
     ReactiveFormsModule,
     AssignmentSixModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [LoggingService, CounterService],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Post } from '../post.model';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,19 +9,45 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsComponent implements OnInit {
 
-  loadedPosts = [];
+  loadedPosts: Post[] = [];
+  isLoading: boolean = false;
+  hasError = false;
+  errorMessage = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private postService: PostsService) { }
 
   ngOnInit() { }
 
   onCreatePost(postData: { title: string; content: string }) {
-    // Send Http request
-    console.log(postData);
+    this.postService.createPost(postData)
+      .subscribe({
+        next: (data) => console.log(data),
+        error: (error) => { alert(error.message); console.log(error) },
+        complete: () => console.log('Data posted'),
+      });
   }
 
   onFetchPosts() {
-    // Send Http request
+    this.isLoading = true;
+    this.postService.getPosts()
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.loadedPosts = data;
+        },
+        error: (error) => {
+          alert(error.message);
+          console.log(error);
+          this.isLoading = false;
+          this.hasError = true;
+          this.errorMessage = error.message;
+
+        },
+        complete: () => {
+          console.log('Data fetched');
+          this.isLoading = false;
+        },
+      })
   }
 
   onClearPosts() {
