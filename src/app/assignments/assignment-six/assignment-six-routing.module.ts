@@ -7,11 +7,12 @@ import { ThirdComponent } from './third/third.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'first-page', component: FirstComponent },
-  { path: 'second-page', component: SecondComponent },
-  { path: 'third-page', component: ThirdComponent },
-  { path: '', redirectTo: '/first-page', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
+  // Disabled for later exercises
+  // { path: 'first-page', component: FirstComponent },
+  // { path: 'second-page', component: SecondComponent },
+  // { path: 'third-page', component: ThirdComponent },
+  // { path: '', redirectTo: '/first-page', pathMatch: 'full' },
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
