@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyCustomValidator } from './custom-validator';
 
+
 @Component({
   selector: 'app-assignment-seven',
   templateUrl: './assignment-seven.component.html',
@@ -22,5 +23,4 @@ export class AssignmentSevenComponent implements OnInit {
   onSaveProject():void{
     console.log(this.projectForm);
   }
-
 }
