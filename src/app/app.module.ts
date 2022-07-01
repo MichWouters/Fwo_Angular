@@ -41,6 +41,7 @@ import { NoteListComponent } from './state-management/note-list/note-list.compon
 import { NoteFormComponent } from './state-management/note-form/note-form.component';
 import { StateManagementComponent } from './state-management/state-management.component';
 import { HeaderComponent } from './state-management/header/header.component';
+import { AssignmentEightStateManagementComponent } from './assignments/assignment-eight-state-management/assignment-eight-state-management.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { HeaderComponent } from './state-management/header/header.component';
     NoteFormComponent,
     StateManagementComponent,
     HeaderComponent,
+    AssignmentEightStateManagementComponent,
   ],
   imports: [
     BrowserModule,
