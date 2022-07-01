@@ -13,10 +13,26 @@ export class PostsComponent implements OnInit {
   isLoading: boolean = false;
   hasError = false;
   errorMessage = '';
+  error: any = null;
 
   constructor(private postService: PostsService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.isLoading = true;
+
+    this.postService.getPosts()
+    .subscribe({
+      next: (data) => {
+        console.log(data);
+        this.loadedPosts = data;
+        this.isLoading = false;
+      },
+      error:(errorMessage) => {
+        this.error = errorMessage.message;
+        console.log(errorMessage);
+      }
+    })
+  }
 
   onCreatePost(postData: { title: string; content: string }) {
     this.postService.createPost(postData)
@@ -51,6 +67,11 @@ export class PostsComponent implements OnInit {
   }
 
   onClearPosts() {
-    // Send Http request
+    this.postService.deletePosts()
+      .subscribe({
+        next:() => {
+          this.loadedPosts = [];
+        }
+      })
   }
 }
