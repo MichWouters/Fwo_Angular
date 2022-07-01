@@ -36,6 +36,11 @@ import { ObservableComponent } from './observables/observable/observable.compone
 import { UserComponent } from './observables/user/user.component';
 import { PostsComponent } from './httpRequests/posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NoteCardComponent } from './state-management/note-card/note-card.component';
+import { NoteListComponent } from './state-management/note-list/note-list.component';
+import { NoteFormComponent } from './state-management/note-form/note-form.component';
+import { StateManagementComponent } from './state-management/state-management.component';
+import { HeaderComponent } from './state-management/header/header.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +71,11 @@ import { HttpClientModule } from '@angular/common/http';
     ObservableComponent,
     UserComponent,
     PostsComponent,
+    NoteCardComponent,
+    NoteListComponent,
+    NoteFormComponent,
+    StateManagementComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
