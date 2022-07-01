@@ -19,7 +19,6 @@ export const store = new Subject<InitialState>();
 export const eventDispatcher = new Subject<MyEvent>();
 
 eventDispatcher.subscribe((data: MyEvent) => {
-    debugger;
     switch (data.type) {
         case ActionTypes.GET_NOTES:
             store.next(state);

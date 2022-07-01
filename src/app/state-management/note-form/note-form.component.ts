@@ -9,7 +9,7 @@ import { ActionTypes } from '../store/actions';
   styleUrls: ['./note-form.component.scss']
 })
 export class NoteFormComponent implements OnInit {
-
+  id: number = 0;
 
   constructor() { }
 
@@ -66,10 +66,10 @@ export class NoteFormComponent implements OnInit {
   }
 
   submit(note: Note){
-    debugger;
+    this.id++;
     const noteWithId: Note = {
       ...note,
-      id: "1", //TODO: Dynamic ID
+      id: this.id.toString()
     }
 
     //Send Post request to dispatcher

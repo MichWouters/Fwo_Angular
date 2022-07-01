@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Note } from '../note';
+import { eventDispatcher } from '../store';
+import { ActionTypes } from '../store/actions';
 
 declare const feather: any;
 
@@ -20,7 +22,7 @@ export class NoteCardComponent implements OnInit {
     let shouldDelete = confirm('Are you sure you want to delete this?')
 
     if (shouldDelete) {
-      // TODO: Send request to Dispatcher to demand a delete.
+      eventDispatcher.next({ type: ActionTypes.DELETE_NOTE, payload: id})
     }
   }
 }

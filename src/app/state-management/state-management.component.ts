@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from './note';
+import { eventDispatcher, store } from './store';
+import { ActionTypes } from './store/actions';
 
 @Component({
   selector: 'app-state-management',
@@ -10,13 +12,16 @@ export class StateManagementComponent implements OnInit {
 
   notes: Note[] = [];
 
-  constructor() { 
-    //TODO: Subscribe on Dispatcher
+  constructor() {
+    store.subscribe((state) => {
+      const { notes } = state;
+      this.notes = notes;
+    });
   }
 
 
   ngOnInit(): void {
-    // TODO: Fetch data on init
+    eventDispatcher.next({ type: ActionTypes.GET_NOTES });
   }
 
 }
