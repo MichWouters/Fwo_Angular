@@ -11,13 +11,13 @@ import { BoatTypes } from '../store/boat-types';
 })
 export class BoatFormComponent implements OnInit {
   id: number = 0;
-  testEnum = BoatTypes;
+  boatEnum = BoatTypes;
   
   constructor() { }
 
   boat: Boat = {
     id: 0,
-    name: '',
+    name: 'foo',
     type: BoatTypes.ROWBOAT,
     isAvailable: true,
   };
@@ -25,11 +25,12 @@ export class BoatFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  completeStep(boat: Boat) {
+  submit() {
+    debugger;
     this.id++;
 
     const boatWithId: Boat = {
-      ...boat, id: 
+      ...this.boat, id: 
       this.id
     };
 
