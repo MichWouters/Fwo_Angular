@@ -1,0 +1,12 @@
+<h3>Add a new boat</h3>
+<form (ngSubmit)="submit()" #boatForm="ngForm">
+    <div class="form-group">
+        <input name="name" placeholder="Name" [(ngModel)]="boat.name" class="form-control app-input" />
+    </div>
+    <div class="form-group">
+        <select class="form-control app-input" name="type" [(ngModel)]="boat.type">
+            <option *ngFor="let enum of boatEnum | keyvalue" value="{{enum.value}}">{{ enum.value }} </option>
+        </select>
+    </div>
+    <input type="submit" class="btn-primary"/>
+</form>

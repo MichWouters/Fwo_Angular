@@ -1,0 +1,4 @@
+<div class="boat-list">
+    <button class="btn-primary" (click)="toggleAvailableAllBoats()">Toggle See all / available boats</button>
+    <app-boat-card *ngFor="let boat of boats" [boat]="boat"></app-boat-card>
+</div>
