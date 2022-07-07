@@ -45,6 +45,8 @@ import { AssignmentEightStateManagementComponent } from './assignments/assignmen
 import { BoatCardComponent } from './assignments/assignment-eight-state-management/boat-card/boat-card.component';
 import { BoatFormComponent } from './assignments/assignment-eight-state-management/boat-form/boat-form.component';
 import { BoatListComponent } from './assignments/assignment-eight-state-management/boat-list/boat-list.component';
+import { AsyncPrepComponent } from './async/async-prep/async-prep.component';
+import { CallbacksComponent } from './async/acade/callbacks/callbacks.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,8 @@ import { BoatListComponent } from './assignments/assignment-eight-state-manageme
     BoatCardComponent,
     BoatFormComponent,
     BoatListComponent,
+    AsyncPrepComponent,
+    CallbacksComponent,
   ],
   imports: [
     BrowserModule,
