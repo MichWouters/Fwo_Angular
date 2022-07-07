@@ -15,6 +15,10 @@ let state: InitialState = {
     boats: [],
 };
 
+let allState: InitialState = {
+    boats: [],
+}
+
 export const boatStore = new Subject<InitialState>();
 export const boatEventDispatcher = new Subject<MyBoatEvent>();
 
@@ -23,12 +27,14 @@ boatEventDispatcher.subscribe((data: MyBoatEvent) => {
 
     switch (data.type) {
         case BoatActionTypes.GET_ALL_BOATS:
+            state = { boats: allState.boats };
             boatStore.next(state);
             break;
         case BoatActionTypes.GET_AVAILABLE_BOATS:
+            allState = {boats: state};
             const availableBoats = boats.filter((boat: Boat) => boat.isAvailable);
-
             state = { boats: availableBoats };
+
             boatStore.next(state);
             break;
         case BoatActionTypes.RENT_BOATS:

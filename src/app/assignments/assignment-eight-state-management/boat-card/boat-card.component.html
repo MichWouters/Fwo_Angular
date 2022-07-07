@@ -1,12 +1,12 @@
 <div class="boat-card">
     <div class="card bg-card mb-3">
         <div class="card-header">
-            <button (click)="deleteBoat(boat.id)">Delete boat</button>
-            <button (click)="rentBoat(boat.id)">Rent boat</button>
+            <button class="btn btn-danger" (click)="deleteBoat(boat.id)">Delete boat</button>
+            <button class="btn btn-success" (click)="rentBoat(boat.id)">Rent boat</button>
         </div>
 
 
-        <div>
+        <div class="card-body">
             <h4>Name: {{ boat.name }}</h4>
             <p>Available: {{ boat.isAvailable ? 'Yes': 'No'}}</p>
             <p>Type: {{ boat.type }} </p>

@@ -20,10 +20,10 @@ export class BoatListComponent implements OnInit {
     this.toggleAvailableClicks++;
 
     if (this.toggleAvailableClicks % 2 === 0) {
-      boatEventDispatcher.next({ type: BoatActionTypes.GET_AVAILABLE_BOATS });
+      boatEventDispatcher.next({ type: BoatActionTypes.GET_ALL_BOATS });
     }
     else {
-      boatEventDispatcher.next({ type: BoatActionTypes.GET_ALL_BOATS });
+      boatEventDispatcher.next({ type: BoatActionTypes.GET_AVAILABLE_BOATS });
     }
   }
 

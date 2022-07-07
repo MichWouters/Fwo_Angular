@@ -26,7 +26,6 @@ export class BoatFormComponent implements OnInit {
   }
 
   submit() {
-    debugger;
     this.id++;
 
     const boatWithId: Boat = {
