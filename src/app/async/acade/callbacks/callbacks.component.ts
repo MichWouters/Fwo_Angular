@@ -11,28 +11,28 @@ export class CallbacksComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  setText = (text) => {
+  setText(text: string){
     this.text = text
   }
 
-  checkAuth = callback => {
+  checkAuth(callback: any){
     this.setText('Checking Auth...')
     setTimeout(() => {
       callback(true);
     }, 2000);
   };
 
-  fetchUser = callback => {
+  fetchUser(callback: any): any{
     this.setText('Fetching User...')
     setTimeout(() => {
       callback({ name: "Max" });
     }, 2000);
   };
 
-  runCallbacks() {
-    this.checkAuth(isAuthorized => {
+  runCallbacks(): void {
+    this.checkAuth((isAuthorized: boolean) => {
       if (isAuthorized) {
-        this.fetchUser(user => {
+        this.fetchUser((user: { name: string; }) => {
           this.setText(user.name)
         })
       }
