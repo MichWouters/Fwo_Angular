@@ -12,6 +12,7 @@ export class AssignmentEightStateManagementComponent implements OnInit {
 
   boats: Boat[] = [];
 
+
   constructor() {
     boatStore.subscribe((state) => {
       const { boats } = state;
@@ -20,7 +21,6 @@ export class AssignmentEightStateManagementComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    boatEventDispatcher.next({ type: BoatActionTypes.GET_ALL_BOATS });
+    boatEventDispatcher.next({ type: BoatActionTypes.GET_AVAILABLE_BOATS });
   }
-
 }

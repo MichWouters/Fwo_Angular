@@ -19,27 +19,35 @@ export const boatStore = new Subject<InitialState>();
 export const boatEventDispatcher = new Subject<MyBoatEvent>();
 
 boatEventDispatcher.subscribe((data: MyBoatEvent) => {
+    const { boats } = state;
+
     switch (data.type) {
         case BoatActionTypes.GET_ALL_BOATS:
             boatStore.next(state);
             break;
         case BoatActionTypes.GET_AVAILABLE_BOATS:
-            throw new Error('Not yet implemented');
+            const availableBoats = boats.filter((boat: Boat) => boat.isAvailable);
+
+            state = { boats: availableBoats };
+            boatStore.next(state);
             break;
         case BoatActionTypes.RENT_BOATS:
-            throw new Error('Not yet implemented');
+            const boat: Boat = boats.find((i: any) => i.id === data.payload)
+
+            if (boat.isAvailable === false) {
+                alert('This boat has already been rented');
+            }
+
+            boat.isAvailable = false;
+            console.log(boat);
+            boatStore.next(state);
             break;
         case BoatActionTypes.CREATE_BOAT:
-            state = {
-                boats: [...state.boats, data.payload]
-            };
+            state = { boats: [...state.boats, data.payload] };
             boatStore.next(state)
             break;
         case BoatActionTypes.DELETE_BOAT:
-            const { boats } = state;
-
-            const id = data.payload;
-            const updatedBoats = boats.filter((boat: Boat) => boat.id !== id);
+            const updatedBoats = boats.filter((boat: Boat) => boat.id !== data.payload);
 
             state = { boats: updatedBoats };
             boatStore.next(state);
