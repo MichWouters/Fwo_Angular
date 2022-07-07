@@ -12,7 +12,7 @@ export class PromisesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setText(text: string) {
+  setText(text: string): void {
     this.text = text
   }
 
@@ -25,7 +25,7 @@ export class PromisesComponent implements OnInit {
     });
   };
 
-  fetchUser(): any {
+  fetchUser(): Promise<any> {
     return new Promise((resolve, reject) => {
       this.setText('Fetching User...');
       setTimeout(() => {
@@ -40,6 +40,9 @@ export class PromisesComponent implements OnInit {
         isAuthorized => {
           if (isAuthorized) {
             return this.fetchUser();
+          }
+          else{
+            return null;
           }
         }
       )
