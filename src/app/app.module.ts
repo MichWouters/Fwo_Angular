@@ -42,6 +42,9 @@ import { NoteFormComponent } from './state-management/note-form/note-form.compon
 import { StateManagementComponent } from './state-management/state-management.component';
 import { HeaderComponent } from './state-management/header/header.component';
 import { AssignmentEightStateManagementComponent } from './assignments/assignment-eight-state-management/assignment-eight-state-management.component';
+import { BoatCardComponent } from './assignments/assignment-eight-state-management/boat-card/boat-card.component';
+import { BoatFormComponent } from './assignments/assignment-eight-state-management/boat-form/boat-form.component';
+import { BoatListComponent } from './assignments/assignment-eight-state-management/boat-list/boat-list.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +81,9 @@ import { AssignmentEightStateManagementComponent } from './assignments/assignmen
     StateManagementComponent,
     HeaderComponent,
     AssignmentEightStateManagementComponent,
+    BoatCardComponent,
+    BoatFormComponent,
+    BoatListComponent,
   ],
   imports: [
     BrowserModule,
