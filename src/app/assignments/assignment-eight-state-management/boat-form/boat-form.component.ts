@@ -17,7 +17,7 @@ export class BoatFormComponent implements OnInit {
 
   boat: Boat = {
     id: 0,
-    name: 'foo',
+    name: '',
     type: BoatTypes.ROWBOAT,
     isAvailable: true,
   };
