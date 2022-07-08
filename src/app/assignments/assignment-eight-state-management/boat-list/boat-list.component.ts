@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Boat } from '../boat';
 import { BoatActionTypes } from '../store/boat-actionTypes';
 import { boatEventDispatcher } from '../store/boat-index';
