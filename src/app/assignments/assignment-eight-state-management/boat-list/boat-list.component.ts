@@ -17,6 +17,7 @@ export class BoatListComponent implements OnInit {
   }
 
   toggleAvailableAllBoats() {
+    // TODO - Fix bug. All boats not loading.
     this.toggleAvailableClicks++;
 
     if (this.toggleAvailableClicks % 2 === 0) {
